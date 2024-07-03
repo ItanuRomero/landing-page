@@ -1,261 +1,317 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Itanú Romero" />
+    <meta
+      name="keywords"
+      content="desenvolvedor de software,
+       aprender programação,
+        mentoria em programação, 
+        Python, 
+        JavaScript, 
+        TypeScript, 
+        projetos de software, 
+        desenvolvimento web, 
+        como sair do zero na programação,
+        como se tornar um desenvolvedor de software,
+        estude programação com Itanú Romero"
+    />
+    <meta
+      name="description"
+      content="Estude programação com Itanú Romero: 
+      Como desenvolvedor de software e entusiasta de tecnologia,
+      quero ajudar você a estudar e desenvolver projetos.
+      Já se perguntou alguma vez como aprender programação do zero?
+      Quero tentar ajudar nessa dúvida, fazer você evitar acumular cursos
+      e projetos que não vão te ajudar a evoluir.
+      Ofereço meu tempo para ensinar linguagens de programação como Python e JavaScript,
+      e além disso, criar projetos web para poder comprovar seus conhecimentos e conseguir
+      um emprego na área de programação o antes possível.
+      Já estive no seu lugar, tive dúvidas de como estudar programação, como criar meu primeiro site,
+      por qual linguagem de programação começar, etc. Então eu posso te ajudar a aprender de 
+      forma prática e colaborativa. Estamos juntos nessa!"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estude com: Itanú Romero</title>
+    <title>Estude programação com Itanú Romero</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
-
-    <script src="https://apis.google.com/js/api.js?onload=handleClientLoad"></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
+      body {
+        margin: 0;
+        padding: 0;
 
-            font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
 
-            background-color: #f8f8ff;
+        background-color: #f8f8ff;
+      }
+
+      main {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 1fr;
+
+        row-gap: 2rem;
+
+        padding: 3rem;
+      }
+
+      main .titles {
+        grid-column: span 2;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        margin: auto 5rem;
+
+        text-align: center;
+      }
+
+      main .titles h2 {
+        width: 80%;
+      }
+
+      main .titles strong {
+        color: #00a86b;
+      }
+
+      main .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 50%;
+
+        margin: auto;
+
+        .photo {
+          width: 10rem;
+          border-radius: 9999px;
+          border: 3px solid #00a86b;
+        }
+
+        strong {
+          color: #00a86b;
+        }
+      }
+
+      main .linkedin {
+        width: 2rem;
+        padding: 0.1rem;
+
+        margin-left: -2rem;
+
+        transition: all ease 200ms;
+      }
+
+      main .linkedin:hover {
+        padding: 0;
+
+        width: 2.2rem;
+      }
+
+      main form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        margin: 0 auto;
+
+        gap: 1rem;
+
+        padding: 2rem 0;
+
+        width: 15rem;
+
+        label {
+          width: 100%;
+          color: #00a86b;
+          font-weight: bold;
+          text-align: center;
+
+          font-size: 2rem;
+        }
+
+        input {
+          border-radius: 4px;
+          border: 1px solid #a9a9a9;
+          width: 100%;
+          height: 2rem;
+          padding-left: 0.6rem;
+          margin: 0 1rem;
+
+          font-size: 1rem;
+        }
+
+        input:focus {
+          outline: none;
+          border: 1px solid #00a86b;
+        }
+
+        button {
+          width: 100%;
+          height: 3rem;
+
+          margin: 0 auto;
+
+          background-color: #00a86b;
+          color: #f8f8ff;
+          border: none;
+          border-radius: 8px;
+
+          font-weight: bold;
+          font-size: 1rem;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        header {
+          flex-wrap: wrap;
+        }
+
+        header p {
+          display: none;
         }
 
         main {
-            display: grid;
-            grid-template-rows: auto auto;
-            grid-template-columns: 1fr 1fr;
-
-            row-gap: 2rem;
-
-            padding: 3rem;
-        }
-
-        main .titles {
-            grid-column: span 2;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            margin: auto 5rem;
-
-            text-align: center;
-        }
-
-        main .titles h2 {
-            width: 80%;
-        }
-
-        main .titles strong {
-            color: #00a86b;
+          grid-template-columns: auto;
+          padding: 1rem;
         }
 
         main .profile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            width: 50%;
-
-            margin: auto;
-
-            .photo {
-                width: 10rem;
-                border-radius: 9999px;
-                border: 3px solid #00a86b;
-            }
-
-            strong {
-                color: #00a86b;
-            }
-        }
-
-        main .linkedin {
-            width: 2rem;
-            padding: 0.1rem;
-
-            margin-left: -2rem;
-
-            transition: all ease 200ms;
-        }
-
-        main .linkedin:hover {
-            padding: 0;
-
-            width: 2.2rem;
+          grid-column: span 2;
         }
 
         main form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            margin: 0 auto;
-
-            gap: 1rem;
-
-            padding: 2rem 0;
-
-            width: 15rem;
-
-            label {
-                width: 100%;
-                color: #00a86b;
-                font-weight: bold;
-                text-align: center;
-
-                font-size: 2rem;
-            }
-
-            input {
-                border-radius: 4px;
-                border: 1px solid #a9a9a9;
-                width: 100%;
-                height: 2rem;
-                padding-left: 0.6rem;
-                margin: 0 1rem;
-
-                font-size: 1rem;
-            }
-
-            input:focus {
-                outline: none;
-                border: 1px solid #00a86b;
-            }
-
-            button {
-                width: 100%;
-                height: 3rem;
-
-                margin: 0 auto;
-
-                background-color: #00a86b;
-                color: #f8f8ff;
-                border: none;
-                border-radius: 8px;
-
-                font-weight: bold;
-                font-size: 1rem;
-            }
+          grid-column: span 2;
         }
+      }
 
-        @media screen and (max-width: 600px) {
-            header {
-                flex-wrap: wrap;
-            }
-
-            header p {
-                display: none;
-            }
-
-            main {
-                grid-template-columns: auto;
-                padding: 1rem;
-            }
-
-            main .profile {
-                grid-column: span 2;
-            }
-
-            main form {
-                grid-column: span 2;
-            }
-        }
-
-        .loading {
-            opacity: 0.6;
-        }
+      .loading {
+        opacity: 0.6;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <div class="titles">
-            <h1>Estude programação com <strong>Itanú Romero</strong></h1>
-            <h2><strong>Formação de desenvolvedores</strong> com apoio de alguém que <strong>já passou</strong> e ainda
-                <strong>passa por isso</strong>
-            </h2>
+      <div class="titles">
+        <h1>Estude programação com <strong>Itanú Romero</strong></h1>
+        <h2>
+          <strong>Formação de desenvolvedores</strong> com apoio de alguém que
+          <strong>já passou</strong> e ainda
+          <strong>passa por isso</strong>
+        </h2>
+      </div>
+      <div class="profile">
+        <div>
+          <img
+            class="photo"
+            src="https://avatars.githubusercontent.com/u/66224956?v=4"
+          />
+          <a href="https://br.linkedin.com/in/itanuromero">
+            <img
+              class="linkedin"
+              src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg"
+              alt="linkedin"
+            />
+          </a>
         </div>
-        <div class="profile">
-            <div>
-                <img class="photo" src="https://avatars.githubusercontent.com/u/66224956?v=4" />
-                <a href="https://br.linkedin.com/in/itanuromero">
-                    <img class="linkedin"
-                        src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg"
-                        alt="linkedin" />
-                </a>
-            </div>
-            <p>Itanú Romero é <strong>desenvolvedor e entusiasta</strong> do mundo da programação.</p>
-            <p>Desde 2019, <strong>estuda quase todos os dias</strong>, junte se a ele nesta jornada!</p>
+        <p>
+          Itanú Romero é <strong>desenvolvedor e entusiasta</strong> do mundo da
+          programação.
+        </p>
+        <p>
+          Desde 2019, <strong>estuda quase todos os dias</strong>, junte se a
+          ele nesta jornada!
+        </p>
+      </div>
+      <form>
+        <label for="email">Adicione seu melhor e-mail</label>
+        <input
+          id="email"
+          placeholder="exemplo@site.com.br"
+          required
+          name="email"
+          type="email"
+          title="Por favor, preencha este campo"
+        />
+        <button id="submitButton" type="submit">
+          Entrar na lista de espera
+        </button>
+        <div id="loadingMessage" style="display: none">Enviando...</div>
+        <div id="completionMessage" style="display: none">
+          E-mail enviado com sucesso!
         </div>
-        <form>
-            <label for="email">Adicione seu melhor e-mail</label>
-            <input id="email" placeholder="exemplo@site.com.br" required name="email" type="email"
-                title="Por favor, preencha este campo" />
-            <button id="submitButton" type="submit">Entrar na lista de espera</button>
-            <div id="loadingMessage" style="display: none;">Enviando...</div>
-            <div id="completionMessage" style="display: none;">E-mail enviado com sucesso!</div>
-            <div id="errorMessage" style="display: none; color: red;">Ocorreu um erro ao enviar o e-mail.</div>
-        </form>
+        <div id="errorMessage" style="display: none; color: red">
+          Ocorreu um erro ao enviar o e-mail.
+        </div>
+      </form>
     </main>
-</body>
+  </body>
 
-<script>
-    document.getElementById('submitButton').addEventListener('click', function (event) {
-        event.preventDefault()
-        sendData()
-    })
+  <script>
+    document
+      .getElementById("submitButton")
+      .addEventListener("click", function (event) {
+        event.preventDefault();
+        sendData();
+      });
 
     function sendData() {
-        const submitButton = document.getElementById('submitButton')
-        const loadingMessage = document.getElementById('loadingMessage')
-        const completionMessage = document.getElementById('completionMessage')
-        const errorMessage = document.getElementById('errorMessage')
+      const submitButton = document.getElementById("submitButton");
+      const loadingMessage = document.getElementById("loadingMessage");
+      const completionMessage = document.getElementById("completionMessage");
+      const errorMessage = document.getElementById("errorMessage");
 
-        submitButton.disabled = true;
-        submitButton.classList.add('loading')
-        errorMessage.style.display = 'none'
-        completionMessage.style.display = 'none'
-        loadingMessage.style.display = 'block'
+      submitButton.disabled = true;
+      submitButton.classList.add("loading");
+      errorMessage.style.display = "none";
+      completionMessage.style.display = "none";
+      loadingMessage.style.display = "block";
 
-        const email = document.getElementById('email').value
+      const email = document.getElementById("email").value;
 
-        const endpoint = 'https://docs.google.com/forms/d/e/1FAIpQLSd4QZXzCvY07C4HNafIaLRYZwHczyhWM124ZxItkCerYHOVpg/formResponse'
+      const endpoint =
+        "https://docs.google.com/forms/d/e/1FAIpQLSd4QZXzCvY07C4HNafIaLRYZwHczyhWM124ZxItkCerYHOVpg/formResponse";
 
-        const data = new URLSearchParams()
-        data.append('entry.435321742', email)
+      const data = new URLSearchParams();
+      data.append("entry.435321742", email);
 
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: data
-        }
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: data,
+      };
 
-        fetch(endpoint, options)
-            .then()
-            .catch(error => {
-                if (error instanceof TypeError) {
-                    console.log('Enviado, mas com erro de CORS')
-                    completionMessage.style.display = 'block'
-                    document.getElementById('email').value = ''
-                } else {
-                    console.error(error)
-                    errorMessage.style.display = 'block'
-                }
-            })
-            .finally(() => {
-                submitButton.disabled = false
-                submitButton.classList.remove('loading')
-                loadingMessage.style.display = 'none'
-            })
+      fetch(endpoint, options)
+        .then()
+        .catch((error) => {
+          if (error instanceof TypeError) {
+            console.log("Enviado, mas com erro de CORS");
+            completionMessage.style.display = "block";
+            document.getElementById("email").value = "";
+          } else {
+            console.error(error);
+            errorMessage.style.display = "block";
+          }
+        })
+        .finally(() => {
+          submitButton.disabled = false;
+          submitButton.classList.remove("loading");
+          loadingMessage.style.display = "none";
+        });
     }
-</script>
-
+  </script>
 </html>

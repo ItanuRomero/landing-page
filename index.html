@@ -263,12 +263,14 @@
                     válido.
                 </p>
             </div>
-            <button id="submitButton" type="submit">Enviar</button>
+            <button id="submitButton" onclick="handleClick(event)" type="submit">
+                Enviar
+            </button>
             <div>
                 <div id="loadingMessage" style="display: none;">Enviando...</div>
                 <div id="completionMessage" class="success" style="display: none;">E-mail enviado com
                     <strong>sucesso!</strong> Fique ligado
-                    que <strong>entrarei em contato</strong> com você <strong>por lá!</strong>
+                    que <strong>entrarei em contato</strong> comS você <strong>por lá!</strong>
                 </div>
                 <div id="errorMessage" style="display: none; color: red;">Ocorreu um erro ao enviar o e-mail.</div>
             </div>
@@ -284,8 +286,7 @@
 </body>
 
 <script>
-
-    document.getElementById('submitButton').addEventListener('click', function (event) {
+    function handleClick(event) {
         event.preventDefault()
         const email = document.getElementById('email').value
         const alertElement = document.getElementById('alert')
@@ -295,7 +296,7 @@
         } else {
             alertElement.style.display = 'block'
         }
-    })
+    }
 
     function validateEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -316,10 +317,15 @@
 
         const email = document.getElementById('email').value
 
-        const endpoint = 'https://docs.google.com/forms/d/e/1FAIpQLSf0XnK4kyv0d8RDTTBroLivNWLZUgr3oPzIh-iDO0FrYaVzhw/formResponse'
+        const formKey = '1FAIpQLSf0XnK4kyv0d8RDTTBroLivNWLZUgr3oPzIh-iDO0FrYaVzhw'
+
+        const url = `https://docs.google.com/forms/d/e/${formKey}/formResponse`
 
         const data = new URLSearchParams()
-        data.append('entry.676713790', email)
+
+        const emailEntryId = '676713790'
+
+        data.append(`entry.${emailEntryId}`, email)
 
         const options = {
             method: 'POST',
@@ -329,11 +335,10 @@
             body: data
         }
 
-        fetch(endpoint, options)
+        fetch(url, options)
             .then()
             .catch(error => {
                 if (error instanceof TypeError) {
-                    console.log('Enviado, mas com erro de CORS')
                     completionMessage.style.display = 'block'
                 } else {
                     console.error(error)
